@@ -8,6 +8,8 @@ import { setupCityObject } from "./setupCityObject";
 
     button.addEventListener('click', async(e) => {
         const cityData = await fetchWeatherData(input.value);
-        // const cityObject = await setupCityObject(cityData);
+        console.log(cityData);
+        const cityObject = await setupCityObject(cityData);
+        console.log(cityObject);
     })
 })();
