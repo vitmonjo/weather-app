@@ -7,7 +7,7 @@ export async function setupCityObject(cityData) {
         cityObject.countryName = cityData.location.country;
         cityObject.cityName = cityData.location.name;
         cityObject.region = cityData.location.region;
-        cityObject.localtime = cityData.location.localtime;
+        cityObject.localTime = cityData.location.localtime;
         cityObject.temp = {
                 celsius: cityData.current.temp_c,
                 fahrenheit: cityData.current.temp_f
