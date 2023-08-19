@@ -8,7 +8,7 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     max-width: 50vw;
     height: 100vh;
     margin: 0 auto;
@@ -52,4 +52,64 @@
 .title:hover {
     font-variation-settings: "wght" 582; 
     letter-spacing: 5px;
+}
+
+.city-container {
+    height: 200px;
+    width: 250px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: 50px 50px 150px;
+    grid-template-rows: repeat(4, 50px);
+    grid-template-areas:
+        "celsius   fahrenheit cityName   "
+        "icon      icon       region     "
+        "icon      icon       countryName"
+        "condition condition  localTime  "
+}
+
+.city-container > * {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp-c {
+    grid-area: 'celsius';
+}
+
+.temp-f {
+    grid-area: 'fahrenheit';
+}
+
+.icon {
+    grid-area: icon;
+    height: 100px;
+    width: 100px;
+}
+
+.region {
+    grid-area: region;
+}
+
+.country-name {
+    grid-area: countryName;
+}
+
+.condition {
+    grid-area: condition;
+}
+
+.local-time {
+    grid-area: localTime;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
