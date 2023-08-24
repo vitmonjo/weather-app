@@ -113,3 +113,9 @@
     flex-direction: column;
     align-items: center;
 }
+
+.loading-text {
+    position: absolute;
+    top: 160px;
+    left: 720px;
+}
