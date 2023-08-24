@@ -2,6 +2,14 @@ import "./styles.css";
 import { fetchWeatherData } from "./fetchWeatherData";
 import { setupCityObject } from "./setupCityObject";
 
+function setLoadingState() {
+    const cityContainer = document.querySelector('.city-container');
+    const loadingText = document.createElement('h1');
+    loadingText.textContent = 'Loading...';
+    loadingText.classList.add('loading-text');
+    cityContainer.append(loadingText);
+}
+
 function clearCityContainer() {
     const cityContainer = document.querySelector('.city-container');
     while (cityContainer.firstChild) cityContainer.removeChild(cityContainer.lastChild);
@@ -54,6 +62,8 @@ function addToScreen(cityObject) {
     const button = document.querySelector('.search-btn');
 
     button.addEventListener('click', async(e) => {
+        clearCityContainer();
+        setLoadingState();
         const cityData = await fetchWeatherData(input.value);
         const cityObject = await setupCityObject(cityData);
         addToScreen(cityObject);
